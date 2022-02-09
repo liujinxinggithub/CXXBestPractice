@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/concurrence.dir/src/A.cpp.o CMakeFiles/concurrence.dir/src/Data_.cpp.o CMakeFiles/concurrence.dir/src/Ta.cpp.o CMakeFiles/concurrence.dir/src/main.cpp.o  -o concurrence  -lpthread 

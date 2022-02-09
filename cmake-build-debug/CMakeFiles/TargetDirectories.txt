@@ -1,0 +1,3 @@
+/home/ljx/CLionProjects/C-11/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ljx/CLionProjects/C-11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ljx/CLionProjects/C-11/cmake-build-debug/CMakeFiles/concurrence.dir

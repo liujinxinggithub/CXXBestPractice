@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ljx/CLionProjects/C-11/src/A.cpp
+A.h
+/home/ljx/CLionProjects/C-11/src/A.h
+
+/home/ljx/CLionProjects/C-11/src/A.h
+
+/home/ljx/CLionProjects/C-11/src/Data_.cpp
+Data_.h
+/home/ljx/CLionProjects/C-11/src/Data_.h
+
+/home/ljx/CLionProjects/C-11/src/Data_.h
+iostream
+-
+
+/home/ljx/CLionProjects/C-11/src/Ta.cpp
+Ta.h
+/home/ljx/CLionProjects/C-11/src/Ta.h
+
+/home/ljx/CLionProjects/C-11/src/Ta.h
+iostream
+-
+
+/home/ljx/CLionProjects/C-11/src/main.cpp
+iostream
+-
+thread
+-
+Ta.h
+/home/ljx/CLionProjects/C-11/src/Ta.h
+Data_.h
+/home/ljx/CLionProjects/C-11/src/Data_.h
+A.h
+/home/ljx/CLionProjects/C-11/src/A.h
+
