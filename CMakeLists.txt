@@ -11,6 +11,7 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/design_patterns/singleton_patte
 add_executable(chapter_1 ${SRC_LIST_1})
 add_executable(chapter_2_main ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/main.cpp)
 add_executable(chapter_2_5 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_5.cpp)
+add_executable(chapter_2_6 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_6.cpp)
 
 add_executable(singleton_pattern ${SRC_SINGLETON_LIST})
 add_executable(inherit ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/inherit.cpp)
@@ -20,3 +21,4 @@ add_executable(exception ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/exception.cpp)
 target_link_libraries(chapter_1 pthread)
 target_link_libraries(chapter_2_main pthread)
 target_link_libraries(chapter_2_5 pthread)
+target_link_libraries(chapter_2_6 pthread)
