@@ -5,6 +5,8 @@
 #include <iostream>
 #include <thread>
 #include <list>
+#include <mutex>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +23,23 @@ private:
 //void myprint(int inum) {
 //    cout << "id=" << std::this_thread::get_id << "g_v" << g_v[0] << g_v[1]<< g_v[2] << endl;
 //}
+
+class LogFile {
+    std::mutex _mu;
+    ofstream f;
+public:
+    LogFile() {
+        f.open("log.txt");
+    }
+    ~LogFile() {
+        f.close();
+    }
+    void shared_print(const string& msg) {
+        std::unique_lock<std::mutex> guard(_mu);
+        cout << "函数中的线程号：" << std::this_thread::get_id() << endl;
+    }
+
+};
 
 int main() {
 //    //一：创建和等待多个线程
@@ -39,7 +58,9 @@ int main() {
 //    cout << "我爱中国" << endl;
 
     // 使用成员函数作为线程函数的方法来写线程
-
+    cout << "主线程号：" << std::hex << std::this_thread::get_id() << endl;
+    LogFile a;
+    a.shared_print("hhh");
 
     return 0;
 }
