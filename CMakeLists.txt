@@ -18,6 +18,7 @@ add_executable(chapter_2_8 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_8.cpp)
 add_executable(singleton_pattern ${SRC_SINGLETON_LIST})
 add_executable(inherit ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/inherit.cpp)
 add_executable(exception ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/exception.cpp)
+add_executable(smart_point ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/smart_point.cpp)
 
 # 给目标链接库
 target_link_libraries(chapter_1 pthread)
