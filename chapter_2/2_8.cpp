@@ -36,20 +36,6 @@ public:
 
     // 把数据从消息队列中取出的线程
     void outMsgRecvQueue() {
-//        int command = 0;
-//        for (int i = 0; i < 100000; ++i) {
-//            bool result = outMsgLULProc(command);
-//            if (result) {
-//                cout << "outMsgRecvQueue执行。取出一个元素：" << command << endl;
-//                // 其他处理代码
-//            }
-//            else {
-//                // 消息队列为空
-//                cout << "outMsgRecvQueue()执行，但目前队列为空 " << i << endl;
-//            }
-//        }
-//        cout << "end" << endl;
-
         int command = 0;
         while (true) {
             std::unique_lock<std::mutex> my_thread(my_mutex1);
@@ -102,10 +88,10 @@ int main() {
     // (b.3)如果没有第二个参数为true,wait返回，继续流程（此时互斥量被锁定lock）
 
     A myobja;
-    std::thread myOutMsgObj(&A::outMsgRecvQueue, &myobja); // 第二个参数是引用才能保证线程里用的是用一个对象
     std::thread myInMsgObj(&A::inMsgRecvQueue, &myobja);
-    myInMsgObj.join();
+    std::thread myOutMsgObj(&A::outMsgRecvQueue, &myobja); // 第二个参数是引用才能保证线程里用的是用一个对象
     myOutMsgObj.join();
+    myInMsgObj.join();
 
 
     return 0;

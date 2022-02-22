@@ -52,7 +52,7 @@ public:
     }
 
     // 把数据从消息队列中取出的线程
-    [[noreturn]] void outMsgRecvQueue() {
+    [[noreturn]] [[noreturn]] void outMsgRecvQueue() {
         int command = 0;
         for (int i = 0; i < 100000; ++i) {
             bool result = outMsgLULProc(command);
