@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.17)
 project(concurrence_practices)
 
 set(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 # 收集源代码
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/chapter_1 SRC_LIST_1)
