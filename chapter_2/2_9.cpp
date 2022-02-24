@@ -40,6 +40,7 @@ int main() {
     //std::launch::async，在调用async函数的时候就开始创建新线程。
     std::future<int> result_1 = std::async(std::launch::async, my_thread);
     std::cout << "continue..." << std::endl;
+    // get()等待线程执行结束并返回结果
     std::cout << result_1.get() << std::endl;
 
     // 类成员函数
