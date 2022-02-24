@@ -18,6 +18,8 @@ add_executable(chapter_2_6 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_6.cpp)
 add_executable(chapter_2_7 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_7.cpp)
 add_executable(chapter_2_8 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_8.cpp)
 add_executable(chapter_2_9 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_9.cpp)
+add_executable(chapter_2_10 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_10.cpp)
+
 
 add_executable(singleton ${SRC_SINGLETON_LIST})
 add_executable(inherit ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/inherit.cpp)
@@ -35,3 +37,4 @@ target_link_libraries(chapter_2_6 pthread)
 target_link_libraries(chapter_2_7 pthread)
 target_link_libraries(chapter_2_8 pthread)
 target_link_libraries(chapter_2_9 pthread)
+target_link_libraries(chapter_2_10 pthread)
