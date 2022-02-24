@@ -41,6 +41,27 @@ public:
 
 };
 
+
+class Test {
+public:
+    Test(int size) : size_(size) {
+        data = new int[size];
+    }
+    Test(){}
+    Test(const Test& Test) {
+        size_ = Test.size_;
+        data = Test.data;// 浅拷贝
+        data = new int[size_]; // 深拷贝
+        cout << "copy " << endl;
+    }
+    ~Test() {
+        delete[] data;
+    }
+    int *data;
+    int size_;
+};
+
+
 int main() {
 //    //一：创建和等待多个线程
 //    vector<thread> mythreads;
@@ -62,5 +83,6 @@ int main() {
     LogFile a;
     a.shared_print("hhh");
 
+    
     return 0;
 }

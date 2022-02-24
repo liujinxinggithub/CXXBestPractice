@@ -8,7 +8,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 # 收集源代码
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/chapter_1 SRC_LIST_1)
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/design_patterns/singleton_pattern SRC_SINGLETON_LIST)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/design_patterns/singleton SRC_SINGLETON_LIST)
 
 # 添加可执行程序
 add_executable(chapter_1 ${SRC_LIST_1})
@@ -17,11 +17,15 @@ add_executable(chapter_2_5 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_5.cpp)
 add_executable(chapter_2_6 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_6.cpp)
 add_executable(chapter_2_7 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_7.cpp)
 add_executable(chapter_2_8 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_8.cpp)
+add_executable(chapter_2_9 ${CMAKE_CURRENT_SOURCE_DIR}/chapter_2/2_9.cpp)
 
-add_executable(singleton_pattern ${SRC_SINGLETON_LIST})
+add_executable(singleton ${SRC_SINGLETON_LIST})
 add_executable(inherit ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/inherit.cpp)
 add_executable(exception ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/exception.cpp)
 add_executable(smart_point ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/smart_point.cpp)
+add_executable(move ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/move.cpp)
+add_executable(perfect_forward ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/perfect_forward.cpp)
+
 
 # 给目标链接库
 target_link_libraries(chapter_1 pthread)
@@ -30,3 +34,4 @@ target_link_libraries(chapter_2_5 pthread)
 target_link_libraries(chapter_2_6 pthread)
 target_link_libraries(chapter_2_7 pthread)
 target_link_libraries(chapter_2_8 pthread)
+target_link_libraries(chapter_2_9 pthread)
