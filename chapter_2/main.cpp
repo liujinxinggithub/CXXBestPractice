@@ -7,6 +7,7 @@
 #include <list>
 #include <mutex>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -61,6 +62,15 @@ public:
     int size_;
 };
 
+void thread_test(int& a) {
+    cout << a << endl;
+}
+
+// 图像数据
+struct ImageData {
+    typedef std::shared_ptr<ImageData> Ptr;
+    int* buffer; // 图片缓存区
+};
 
 int main() {
 //    //一：创建和等待多个线程
@@ -79,10 +89,35 @@ int main() {
 //    cout << "我爱中国" << endl;
 
     // 使用成员函数作为线程函数的方法来写线程
-    cout << "主线程号：" << std::hex << std::this_thread::get_id() << endl;
-    LogFile a;
-    a.shared_print("hhh");
+//    cout << "主线程号：" << std::hex << std::this_thread::get_id() << endl;
+//    LogFile a;
+//    a.shared_print("hhh");
 
-    
+    char src[40];
+    char dest[100];
+
+    memset(dest, '\0', sizeof(dest));
+    strcpy(src, "This is runoob.com");
+    strcpy(dest, src);
+
+    cout << "&src  " << &src << endl;
+    cout << "&dest " << &dest << endl;
+
+//    int a = 5;
+//    //指针p必须指向一个地址，不能用int*p = a
+//    //因为a只是一个变量，不能表示内存地址
+//    int* p = &a;
+//
+//    cout << "a = " << a << endl;
+//    //*p表示指针指向的地址中的内容
+//    cout << "*p = " << *p << endl;
+//
+//    cout << "&a = " << &a << endl;
+//    //p表示指针指向内容的地址
+//    cout << "p = " << p << endl;
+//
+//    //这里&p是取指针的地址，和a及其地址没有任何关系
+//    cout << "&p = " << &p << endl;
+
     return 0;
 }

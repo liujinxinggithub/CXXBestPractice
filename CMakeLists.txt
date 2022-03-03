@@ -29,6 +29,7 @@ add_executable(exception ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/exception.cpp)
 add_executable(smart_point ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/smart_point.cpp)
 add_executable(move ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/move.cpp)
 add_executable(perfect_forward ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/perfect_forward.cpp)
+add_executable(char_test ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/char.cpp)
 
 
 # 给目标链接库
