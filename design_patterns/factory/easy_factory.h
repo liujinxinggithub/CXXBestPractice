@@ -2,8 +2,8 @@
 // Created by ljx on 2022/3/2.
 //
 
-#ifndef CONCURRENCE_PRACTICES_FACTORY_H
-#define CONCURRENCE_PRACTICES_FACTORY_H
+#ifndef CONCURRENCE_PRACTICES_EASY_FACTORY_H
+#define CONCURRENCE_PRACTICES_EASY_FACTORY_H
 
 #include <string>
 #include <cmath>
@@ -32,10 +32,7 @@ public:
     }
 
     // 纯虚函数
-    virtual double GetResult() {
-        double result = 0;
-        return result;
-    };
+    virtual double GetResult() = 0;
 
 private:
     double first_number_{};
@@ -84,7 +81,6 @@ public:
 class OperationFactory {
 public:
     static Operation *CreateOperate(const char &operate);
-
 };
 
-#endif //CONCURRENCE_PRACTICES_FACTORY_H
+#endif //CONCURRENCE_PRACTICES_EASY_FACTORY_H

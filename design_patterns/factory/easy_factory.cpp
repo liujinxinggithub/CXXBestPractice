@@ -2,7 +2,7 @@
 // Created by ljx on 2022/3/2.
 //
 
-#include "factory.h"
+#include "easy_factory.h"
 
 Operation *OperationFactory::CreateOperate(const char &operate) {
     Operation *oper = nullptr;

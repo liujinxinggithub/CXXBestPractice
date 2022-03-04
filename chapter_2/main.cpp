@@ -103,21 +103,7 @@ int main() {
     cout << "&src  " << &src << endl;
     cout << "&dest " << &dest << endl;
 
-//    int a = 5;
-//    //指针p必须指向一个地址，不能用int*p = a
-//    //因为a只是一个变量，不能表示内存地址
-//    int* p = &a;
-//
-//    cout << "a = " << a << endl;
-//    //*p表示指针指向的地址中的内容
-//    cout << "*p = " << *p << endl;
-//
-//    cout << "&a = " << &a << endl;
-//    //p表示指针指向内容的地址
-//    cout << "p = " << p << endl;
-//
-//    //这里&p是取指针的地址，和a及其地址没有任何关系
-//    cout << "&p = " << &p << endl;
+
 
     return 0;
 }

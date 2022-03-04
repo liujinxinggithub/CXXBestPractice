@@ -1,6 +1,11 @@
 # cmake
 cmake-build-debug/*
+cmake-build-release/*
 
 
 #.idea
 .idea/*
+
+
+#bin
+bin/*

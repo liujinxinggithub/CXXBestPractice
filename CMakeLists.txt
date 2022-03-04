@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 SET(CMAKE_BUILD_TYPE "Debug")
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+# 设置程序输出路径
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 # 包含头文件
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/3rdpart/easy_log) # 日志第三方库头文件
@@ -38,7 +40,6 @@ add_executable(smart_point ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/smart_point.cpp)
 add_executable(move ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/move.cpp ${3RD_LOG})
 add_executable(perfect_forward ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/perfect_forward.cpp)
 add_executable(char_test ${CMAKE_CURRENT_SOURCE_DIR}/cxx_base/char.cpp)
-
 
 # 给目标链接库
 target_link_libraries(chapter_1 pthread)

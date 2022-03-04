@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include <cstdio>
 #include <cstring>
 #include <cstdlib>
 #include <mutex>
 #include <memory>
-
+#include <iostream>
 using namespace std;
 
 std::mutex capture_mutex;
@@ -87,6 +87,10 @@ int main() {
 // char[] 对应的内存区域总是可写，char* 指向的区域有时可写，有时只读
 //char* aa = "string1";
 //char bb[] = "string2";
-
+    char* dest = (char*) new char[50];
+    char* src = ("fdsafasfasfasf");
+    // strcpy(dest, src); // 深拷贝
+    dest = src; // 浅拷贝
+    delete[] dest;
     return 0;
 }
