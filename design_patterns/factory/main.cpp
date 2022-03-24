@@ -1,6 +1,7 @@
 #include <iostream>
 #include "easylogging++.h"
 #include "easy_factory.h"
+#include "factory.h"
 
 INITIALIZE_EASYLOGGINGPP
 
@@ -26,5 +27,11 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
+    LOG(INFO) << "工厂模式";
+    IFactory* addFactory = new AddFactory;
+    auto add_operator = addFactory->CreateOperator();
+    add_operator->SetNumA(1);
+    add_operator->SetNumB(2);
+    add_operator->GetResult();
     return 0;
 }

@@ -25,8 +25,7 @@ public:
     virtual double GetResult() = 0;
 
 private:
-    double first_number_{};
-    double second_number_{};
+    double first_number_{}, second_number_{};
 };
 
 class Add : public Operation {
@@ -58,5 +57,33 @@ public:
 private:
     static Operation *oper;
 };
+
+Operation *OperationFactory::oper = nullptr;
+
+Operation *OperationFactory::CreateOperate(const char &operate) {
+    switch (operate) {
+        case '+' : {
+            oper = new Add;
+            break;
+        }
+        case '-' : {
+            oper = new Subtraction;
+            break;
+        }
+        case '*' : {
+            oper = new Multiplication;
+            break;
+        }
+        case '/' : {
+            oper = new Division;
+            break;
+        }
+        default: {
+            throw "输入有误！";
+        }
+    }
+    return oper;
+}
+
 
 #endif //CONCURRENCE_PRACTICES_EASY_FACTORY_H
