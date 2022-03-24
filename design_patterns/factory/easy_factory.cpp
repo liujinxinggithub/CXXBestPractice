@@ -4,8 +4,9 @@
 
 #include "easy_factory.h"
 
+Operation *OperationFactory::oper = nullptr;
+
 Operation *OperationFactory::CreateOperate(const char &operate) {
-    Operation *oper = nullptr;
     switch (operate) {
         case '+' : {
             oper = new Add;

@@ -4,7 +4,15 @@
 
 INITIALIZE_EASYLOGGINGPP
 
+void loadLogConf() {
+    // 加载easylog配置
+    el::Configurations conf("../config/log.conf");
+    el::Loggers::reconfigureLogger("default", conf);
+    el::Loggers::reconfigureAllLoggers(conf);
+}
+
 int main() {
+    loadLogConf();
     LOG(INFO) << "简单工厂模式";
     try {
         auto oper = OperationFactory::CreateOperate('-');
@@ -17,17 +25,6 @@ int main() {
         LOG(ERROR) << err;
         exit(EXIT_FAILURE);
     }
-    char *buffer = (char *) malloc(sizeof(char) * 10);
-    cout << "buffer 指向" << &buffer << endl;
-    char *my_buffer = buffer;
-    cout << "my_buffer 指向" << &my_buffer << endl;
 
-    free(buffer);
-
-    cout << "buffer 指向" << &buffer << endl;
-    cout << "my_buffer 指向" << &my_buffer << endl;
-    if (my_buffer == nullptr) {
-        LOG(ERROR) << "my_buffer == nullptr";
-    }
     return 0;
 }

@@ -14,22 +14,12 @@ using namespace std;
 class Operation {
 public:
     // 设置输入的计算数据
-    void SetFirstNumber(const double &first_number) {
-        first_number_ = first_number;
-    }
-
-    void SetSecondNumber(const double &second_number) {
-        second_number_ = second_number;
-    }
+    void SetFirstNumber(const double &first_number) {first_number_ = first_number;}
+    void SetSecondNumber(const double &second_number) {second_number_ = second_number;}
 
     // 获取计算数据
-    double GetFirstNumber() const {
-        return first_number_;
-    }
-
-    double GetSecondNumber() const {
-        return second_number_;
-    }
+    double GetFirstNumber() const {return first_number_;}
+    double GetSecondNumber() const {return second_number_;}
 
     // 纯虚函数
     virtual double GetResult() = 0;
@@ -41,46 +31,32 @@ private:
 
 class Add : public Operation {
 public:
-    double GetResult() override {
-        double result = 0;
-        result = GetFirstNumber() + GetSecondNumber();
-        return result;
-    }
+    double GetResult() override {return GetFirstNumber() + GetSecondNumber();}
 };
 
 class Subtraction : public Operation {
 public:
-    double GetResult() override {
-        double result = 0;
-        result = GetFirstNumber() - GetSecondNumber();
-        return result;
-    }
+    double GetResult() override {return GetFirstNumber() - GetSecondNumber();}
 };
 
 class Multiplication : public Operation {
 public:
-    double GetResult() override {
-        double result = 0;
-        result = GetFirstNumber() * GetSecondNumber();
-        return result;
-    }
+    double GetResult() override {return GetFirstNumber() * GetSecondNumber();}
 };
 
 class Division : public Operation {
 public:
     double GetResult() override {
-        if (GetSecondNumber() == 0) {
-            throw "The divisor cannot be 0";
-        }
-        double result = 0;
-        result = GetFirstNumber() / GetSecondNumber();
-        return result;
+        if (GetSecondNumber() == 0) {throw "The divisor cannot be 0";}
+        return GetFirstNumber() / GetSecondNumber();
     }
 };
 
 class OperationFactory {
 public:
     static Operation *CreateOperate(const char &operate);
+private:
+    static Operation *oper;
 };
 
 #endif //CONCURRENCE_PRACTICES_EASY_FACTORY_H
