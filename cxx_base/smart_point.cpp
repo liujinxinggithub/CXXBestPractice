@@ -6,7 +6,7 @@ using namespace std;
 class BB;
 class AA {
 public:
-    shared_ptr<BB> b_ptr;
+    shared_ptr<BB> b_ptr; // weak_ptr<BB> b_ptr;
     ~AA() {
         cout << "~AA()" << endl;
     }
@@ -17,7 +17,7 @@ public:
 
 class BB {
 public:
-    shared_ptr<AA> a_ptr;
+    weak_ptr<AA> a_ptr; // weak_ptr<AA> a_ptr;
     ~BB() {
         cout << "~BB()" << endl;
     }
