@@ -5,8 +5,3 @@ cmake-build-release/*
 
 #.idea
 .idea/*
-
-
-#bin
-bin/*
-!bin/.gitkeep
